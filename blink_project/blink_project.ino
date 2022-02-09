@@ -11,16 +11,16 @@ void const blink(const int duration) {
 }
 
 void loop() {
-  int a[3] = {100,250,500}; // array of durations for blink
-  int b[3] = {5, 3, 1};     // array of times to blink
+  int a[3] = {100,250,500}; // array of blink duration values
+  int b[3] = {5, 3, 1};     // array of blink repetition values
   
   int i=0; // initialize counter at 0
   do
     {
-      for (int j=0; j<b[i]; ++j)
+      for (int j=0; j<b[i]; ++j) // loop through number of repetitions at b[i]
       {
-        blink(a[i]);
+        blink(a[i]); // blink the LED using duration at a[i]
       }
-      ++i;
-    } while(i<sizeof(a)/sizeof(a)[0]); // break loop at end of array a
+      ++i; // increment counter
+    } while(i<sizeof(a)/sizeof(a)[0]); // break loop when counter = num of array elems
 }
