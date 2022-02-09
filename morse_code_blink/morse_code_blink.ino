@@ -28,13 +28,13 @@ void const blink(const int d1, const int d2) // Overloaded function: programmabl
 }
 
 // LETTER BLINK (in progress)
-void const blink(const int* letter, const int size)
+void const blink(int* letter, const int size)
 {
   int ctr = 0;
   do
   {
-    int d = letter[ctr]; 
-    blink(d);
+    int *d = &letter[ctr]; 
+    blink(*d);
     ++ctr;
   } while (ctr<size);
 }
