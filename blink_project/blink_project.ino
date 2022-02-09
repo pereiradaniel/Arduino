@@ -3,7 +3,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void blink(int duration) {
+void const blink(const int duration) {
   digitalWrite(LED_BUILTIN, HIGH);
   delay(duration);
   digitalWrite(LED_BUILTIN, LOW);
@@ -14,7 +14,7 @@ void loop() {
   int a[3] = {100,250,500}; // array of durations for blink
   int b[3] = {5, 3, 1};     // array of times to blink
   
-  int i=0;
+  int i=0; // initialize counter at 0
   do
     {
       for (int j=0; j<b[i]; ++j)
@@ -22,5 +22,5 @@ void loop() {
         blink(a[i]);
       }
       ++i;
-    } while(i<sizeof(a)/sizeof(a)[0]);
+    } while(i<sizeof(a)/sizeof(a)[0]); // break loop at end of array a
 }
